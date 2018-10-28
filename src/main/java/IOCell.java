@@ -18,7 +18,6 @@ public class IOCell {
 
     public IOCell(String filePath) {
         this.filePath = new File(filePath);
-
     }
 
     /**

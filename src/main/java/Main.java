@@ -12,7 +12,7 @@ public class Main {
         IOCell ioCell = new IOCell(filePath);
 
         Cell x = ioCell.getCell(0, 1, 0);
-        Cell y = ioCell.getCell(0, 1, 1);
+        Cell y = ioCell.getCell(0,  1, 1);
         System.out.println("first number: " + x.toString());
         System.out.println("second number: " + y.toString());
         //Write x * y
