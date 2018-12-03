@@ -113,13 +113,14 @@ createCellStyle () | Создание стиля
 Классы HSSFSheet, XSSFSheet включают свойства и методы создания строк, определения размера колонок, слияния ячеек в одну область и т.д.
 
 **Основные методы классов работы с листами**
+
 | Метод | Описание |
-|--|--|
-addMergedRegion (CellRangeAddress) | Определение области слияния ячеек страницы
-autoSizeColumn (int column) | Автоматическая настройка ширины колонки column (отсчет от 0)
-setColumnWidth (int column, int width) | Настройка ширины колонки column (отсчет от 0)
-createRow (int row) | Создание строки row (отсчет от 0)
-getRow (int row) | Получение ссылки на строку row (отсчет от 0)
+|-|-|
+| addMergedRegion (CellRangeAddress) | Определение области слияния ячеек страницы |
+| autoSizeColumn (int column) | Автоматическая настройка ширины колонки column (отсчет от 0)|
+| setColumnWidth (int column, int width) | Настройка ширины колонки column (отсчет от 0) |
+| createRow (int row) | Создание строки row (отсчет от 0) |
+| getRow (int row) | Получение ссылки на строку row (отсчет от 0) |
 
 С полным перечнем всех методов класса XSSFSheet можно познакомиться на странице[https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFSheet.html](https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFSheet.html)
 
@@ -130,15 +131,17 @@ getRow (int row) | Получение ссылки на строку row (отс
 Классы HSSFRow, XSSFRow включают свойства и методы работы со строками, создания ячеек в строке и т.д.
 
 **Основные методы классов HSSFRow, XSSFRow**
+
 |Методы| Описание  |
-|--|--|
-setHeight (short) | Определение высоты строки
-getHeight() | Получение значения высоты в twips'ах (1/20)
-getHeightInPoints() | Получение значение высоты
-createCell (int) | Создание ячейки в строке (отсчет от 0)
-getCell(int) | Получение ссылки на ячейку
-getFirstCellNum() | Получение номера первой ячейки в строке
-setRowStyle(CellStyle) | Определение стиля всей строки
+|-|-|
+| setHeight (short) | Определение высоты строки |
+| getHeight() | Получение значения высоты в twips'ах (1/20) |
+| getHeightInPoints() | Получение значение высоты |
+| createCell (int) | Создание ячейки в строке (отсчет от 0) |
+| getCell(int) | Получение ссылки на ячейку |
+| getFirstCellNum() | Получение номера первой ячейки в строке |
+| setRowStyle(CellStyle) | Определение стиля всей строки |
+
 С полным перечнем всех методов класса XSSFRow можно познакомиться на странице[http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFRow.html](http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFRow.html)
 ##### Классы ячеек HSSFCell, XSSFCell
 
@@ -148,7 +151,7 @@ setRowStyle(CellStyle) | Определение стиля всей строки
 **Основные методы классов HSSFCell, XSSFCell**
 
 |Метод| Описание |
-|--|--|
+|-|-|
 getBooleanCellValue() | Чтение логического значения ячейки
 getDateCellValue() | Чтение значения ячейки типа java.util.Date  getNumericCellValue() | Чтение числового значения ячейки типа double
  getStringCellValue() | Чтение текстового значения ячейки (java.lang.String)
