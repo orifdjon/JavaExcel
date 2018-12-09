@@ -1,6 +1,6 @@
 
 
-**Интеграция электронных таблиц MS Excel и Java.**
+**Интеграция электронных таблиц MS Excel в Java.**
 ---
 
 ### Описание:
@@ -58,7 +58,7 @@ XDGF -- XML DiaGram Format -- Компонент работы с файлами 
 * ячейка - HSSFCell, XSSFCell
 * стиль - стили ячеек HSSFCellStyle, XSSFCellStyle
 * шрифт - шрифт ячеек HSSFFont, XSSFFont
-* 
+
 **Поскольку описание всех классов и методов не разместить на одной странице, то ниже по тексту приводятся ссылки для перехода к исходной документации.**
 
 ### Классы и методы Apache POI для работы с файлами Excel
@@ -143,6 +143,7 @@ createCellStyle () | Создание стиля
 | setRowStyle(CellStyle) | Определение стиля всей строки |
 
 С полным перечнем всех методов класса XSSFRow можно познакомиться на странице[http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFRow.html](http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFRow.html)
+
 ##### Классы ячеек HSSFCell, XSSFCell
 
 Ячейки электронной таблицы используются для размещения информации. В ячейке может быть представлено числовое значение, текст или формула. Также ячейка может содержать комментарий.
@@ -153,8 +154,9 @@ createCellStyle () | Создание стиля
 |Метод| Описание |
 |-|-|
 getBooleanCellValue() | Чтение логического значения ячейки
-getDateCellValue() | Чтение значения ячейки типа java.util.Date  getNumericCellValue() | Чтение числового значения ячейки типа double
- getStringCellValue() | Чтение текстового значения ячейки (java.lang.String)
+getDateCellValue() | Чтение значения ячейки типа java.util.Date  
+getNumericCellValue() | Чтение числового значения ячейки типа double
+getStringCellValue() | Чтение текстового значения ячейки (java.lang.String)
 setCellValue(boolean) | Определение логического значения ячейки
 setCellValue(java.util.Calendar) | Определение значения ячейки типа даты
 setCellValue(java.util.Date) | Определение значения ячейки типа даты
@@ -344,7 +346,7 @@ stax-api-1.0.1.jar, poi-ooxml-schemas-3.12.jar и commons-codec-1.9.jar
     }
     ```
     4.  Создать метод для записи с Java в Excel 
-    ```
+    ```java
         public void setCell(int row, int column, double val) {
         Workbook workbook = null;
          try (FileInputStream file = new FileInputStream(filePath)) {

@@ -1,0 +1,220 @@
+ \chapter{Классы и методы Apache POI для работы с файлами Excel}
+
+\section{Рабочая книга HSSFWorkbook, XSSFWorkbook}
+
+\begin{itemize}
+	\item HSSFWorkbook org.apache.poi.hssf.usermodel класс чтения и записи файлов Microsoft Excel в формате .xls, совместим с версиями MS-Office 97-2003;
+	\item XSSFWorkbook org.apache.poi.xssf.usermodel класс чтения и записи файлов Microsoft Excel в формате .xlsx, совместим с MS-Office 2007 или более поздней версии.
+\end{itemize}
+
+\subsection{Конструкторы класса HSSFWorkbook}
+
+\begin{lstlisting}
+	HSSFWorkbook ();
+	HSSFWorkbook (InternalWorkbook book);
+	HSSFWorkbook (POIFSFileSystem  fs);
+	HSSFWorkbook (NPOIFSFileSystem fs);
+	HSSFWorkbook (POIFSFileSystem  fs, boolean preserveNodes);
+	HSSFWorkbook (DirectoryNode directory,
+	POIFSFileSystem fs,
+	boolean preserveNodes);
+	HSSFWorkbook (DirectoryNode directory, boolean preserveNodes);
+	HSSFWorkbook (InputStream s);
+	HSSFWorkbook (InputStream s, boolean preserveNodes);
+\end{lstlisting}
+
+\textit{preservenodes является необязательным параметром, который определяет необходимость сохранения узлов типа макросы.}
+
+\subsection{Конструкторы класса XSSFWorkbook}
+
+\begin{lstlisting}
+	XSSFWorkbook ();
+	// workbookType  создать .xlsx или .xlsm
+	XSSFWorkbook (XSSFWorkbookType workbookType);
+	XSSFWorkbook (OPCPackage pkg );
+	XSSFWorkbook (InputStream is);
+	XSSFWorkbook (File file);
+	XSSFWorkbook (String path);
+\end{lstlisting}
+
+\subsection{Основные методы HSSFWorkbook, XSSFWorkbook}
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Основные методы HSSFWorkbook, XSSFWorkbook}
+		\label{tab:listOfComponentsWithBooks}
+		\begin{tabular}{l|l}
+			\textbf{Метод} & \textbf{Описание} \\
+			\hline
+			createSheet() & Создание страницы книги HSSFSheet, XSSFSheet \\
+			createSheet(String name) & Создание страницы с определенным наименованием \\
+			createFont()  & Создание шрифта \\ 
+			createCellStyle() & Создание стиля \\
+		\end{tabular}
+	\end{center}
+\end{table}
+
+С полным перечнем всех методов класса XSSFWorkbook можно познакомиться на странице \href{http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFWorkbook.html}{http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFWorkbook.html}.
+
+\section{Классы листов книги, HSSFSheet, XSSFSheet}
+
+\begin{itemize}
+	\item org.apache.poi.hssf.usermodel.\textbf{HSSFSheet}
+	\item org.apache.poi.xssf.usermodel.\textbf{XSSFSheet}
+\end{itemize}
+
+Классы HSSFSheet, XSSFSheet включают свойства и методы создания строк, определения размера колонок, слияния ячеек в одну область и т.д.
+
+\subsection{Основные методы классов работы с листами}
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Основные методы классов работы с листами}
+		\label{tab:listOfComponentsWithList}
+		\begin{tabular}{l|l}
+			\textbf{Метод} & \textbf{Описание} \\
+			\hline
+			addMergedRegion(CellRangeAddress) & Определение области слияния ячеек страницы \\
+			autoSizeColumn(int column) & Автоматическая настройка ширины колонки column (отсчет от 0) \\
+			setColumnWidth(int column, int width)  & Настройка ширины колонки column (отсчет от 0) \\ 
+			createRow(int row) & Создание строки row (отсчет от 0) \\
+			getRow(int row) & Получение ссылки на строку row (отсчет от 0) \\
+		\end{tabular}
+	\end{center}
+\end{table}
+
+С полным перечнем всех методов класса XSSFSheet можно познакомиться на странице\\ \href{https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFSheet.html}{https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFSheet.html}.
+
+\section{Классы строк HSSFRow, XSSFRow}
+
+\begin{itemize}
+	\item org.apache.poi.hssf.usermodel.\textbf{HSSFRow}
+	\item  org.apache.poi.xssf.usermodel.\textbf{XSSFRow}
+\end{itemize}
+
+Классы HSSFRow, XSSFRow включают свойства и методы работы со строками, создания ячеек в строке и т.д.
+
+\subsection{Основные методы классов HSSFRow, XSSFRow}
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Основные методы классов HSSFRow, XSSFRow}
+		\label{tab:listOfComponentsWithSheets}
+		\begin{tabular}{l|l}
+			\textbf{Метод} & \textbf{Описание} \\
+			\hline
+			setHeight(short) & Определение высоты строки \\
+			getHeight() & Получение значения высоты в twips'ах (1/20) \\
+			getHeightInPoints()  & Получение значение высоты \\ 
+			createCell (int) & Создание ячейки в строке (отсчет от 0) \\
+			getCell(int) & Получение ссылки на ячейку \\
+			getFirstCellNum() & Получение номера первой ячейки в строке \\
+			setRowStyle(CellStyle) & Определение стиля всей строки\\
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+С полным перечнем всех методов класса XSSFRow можно познакомиться на странице \href{http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFRow.html}{http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFRow.html}
+
+\section{Классы ячеек HSSFCell, XSSFCell}
+
+Ячейки электронной таблицы используются для размещения информации. В ячейке может быть представлено числовое значение, текст или формула. Также ячейка может содержать комментарий.
+
+Классы HSSFCell, XSSFCell включают свойства и методы работы с ячейками таблицы.
+\subsection{Основные методы классов HSSFCell, XSSFCell}
+
+
+\begin{table}[!h]
+	\begin{center}
+		\caption{Основные методы классов HSSFRow, XSSFRow}
+		\label{tab:listOfComponentsWithCell}
+		\begin{tabular}{l|l}
+			\textbf{Метод} & \textbf{Описание} \\
+			\hline
+			getBooleanCellValue() & Чтение логического значения ячейки \\
+			getDateCellValue() & Чтение значения ячейки типа java.util.Date  \\
+			getNumericCellValue()  & Чтение числового значения ячейки типа double \\ 
+			getStringCellValue() & Чтение текстового значения ячейки (java.lang.String) \\
+			setCellValue(boolean) & Опреaделение логического значения ячейки \\
+			setCellValue(java.util.Calendar) & Определение значения ячейки типа даты \\
+			setCellValue(java.util.Date) & Определение значения ячейки типа даты\\
+			getCellTypeEnum() & Чтение типа значения ячейки CellType \\
+			setCellComment(Comment) & Запись комментария в ячейку \\
+			getCellComment() & Чтение комментария ячейки \\
+			removeCellComment() & Удаление комментария ячейки \\
+			setHyperlink(Hyperlink) & Запись гиперссылки в ячейку \\
+			getHyperlink() & Чтение гиперссылки XSSFHyperlink в ячейке \\
+			removeHyperlink() & Удаления гиперссылки ячейки \\
+			getCellFormula() &  Чтение формулы, например SUM(C4:E4) \\
+			setCellFormula(String) & Определение формулы, например =SUM(C4:E4) \\
+			getCellStyle() & Чтение стиля ячейки (XSSFCellStyle) \\
+			setCellStyle(CellStyle) & Определение стиля ячейки \\
+			getColumnIndex() & Определение индекса ячейки \\
+			setAsActiveCell() & Определение активности ячейки \\
+		\end{tabular}
+	\end{center}
+\end{table}
+
+-   org.apache.poi.hssf.usermodel.\textbf{HSSFCell}
+-   org.apache.poi.xssf.usermodel.\textbf{XSSFCell}
+\\
+С полным перечнем всех методов класса XSSFCell можно познакомиться на странице \\ \href{http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFCell.html}{http://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFCell.html}
+
+
+
+\section{Классы стилей ячеек HSSFCellStyle, XSSFCellStyle}
+
+С полным перечнем всех свойств и методов класса XSSFCellStyle можно познакомиться на странице \\
+\href{http://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/CellStyle.html}{http://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/CellStyle.html} \\
+Ниже в качестве примера представлен метод, формирующий стиль ячейки, в которой :
+
+-   текст центрируется по вертикали и горизонтали;
+-   обрамление ячейки представляет тонкую черную линию по периметру;
+-   текст переносится на следующую строку (не ячейку), если не вмещается в размер ячейки.
+
+\begin{lstlisting}
+private XSSFCellStyle createCellStyle(XSSFWorkbook book) {
+	BorderStyle thin  = BorderStyle.THIN;
+	short       black = IndexedColors.BLACK.getIndex();
+
+	XSSFCellStyle style = book.createCellStyle();
+
+	style.setWrapText(true);
+	style.setAlignment        (HorizontalAlignment.CENTER);
+	style.setVerticalAlignment(VerticalAlignment  .CENTER);
+	
+	style.setBorderTop        (thin);
+	style.setBorderBottom     (thin);
+	style.setBorderRight      (thin);
+	style.setBorderLeft       (thin);
+	
+	style.setTopBorderColor   (black);
+	style.setRightBorderColor (black);
+	style.setBottomBorderColor(black);
+	style.setLeftBorderColor  (black);
+	
+	return style;
+}
+\end{lstlisting}
+
+Метод setWrapText позволяет определить флаг переноса текста в ячейке согласно ее размеру (ширине). Чтобы перенести текст принудительно, можно в текстовой строке установить символы CRCL, например "Разделитель $\backslash$r $\backslash$n текста".
+
+\section{Классы шрифтов HSSFFont, XSSFFont}
+
+С полным перечнем всех свойств и методов класса XSSFFont можно познакомиться на странице\\
+\href{http://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/Font.html}{http://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/Font.html}
+
+Ниже в качестве примера представлен метод, формирующий шрифт типа "Times New Roman" :
+
+\begin{lstlisting}
+private XSSFFont createCellFont(XSSFWorkbook book)  {  	
+	XSSFFont font = workBook.createFont(); 
+	font.setFontHeightInPoints((short)  12); 
+	font.setBoldweight(XSSFFont.BOLDWEIGHT_BOLD); 
+	font.setFontName("Times New Roman");  
+	return(font);  
+}  
+.  .  .  
+HSSFCellStyle style = book.createCellStyle(); style.setFont(createCellFont(book));
+\end{lstlisting}

@@ -1,0 +1,28 @@
+\select@language {russian}
+\contentsline {chapter}{Введение}{2}{chapter*.1}
+\contentsline {chapter}{\numberline {1}Компоненты Apache POI}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Описание компонетов}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Список компонентов}{5}{section.1.2}
+\contentsline {chapter}{\numberline {2}Классы и методы Apache POI для работы с файлами Excel}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Рабочая книга HSSFWorkbook, XSSFWorkbook}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Конструкторы класса HSSFWorkbook}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Конструкторы класса XSSFWorkbook}{7}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Основные методы HSSFWorkbook, XSSFWorkbook}{8}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Классы листов книги, HSSFSheet, XSSFSheet}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Основные методы классов работы с листами}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Классы строк HSSFRow, XSSFRow}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Основные методы классов HSSFRow, XSSFRow}{9}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}Классы ячеек HSSFCell, XSSFCell}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Основные методы классов HSSFCell, XSSFCell}{9}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Классы стилей ячеек HSSFCellStyle, XSSFCellStyle}{10}{section.2.5}
+\contentsline {section}{\numberline {2.6}Классы шрифтов HSSFFont, XSSFFont}{11}{section.2.6}
+\contentsline {chapter}{\numberline {3}Инструкция}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Чтение ячейки с MS Excel }{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Запись в ячейку MS Excel}{13}{section.3.2}
+\contentsline {section}{\numberline {3.3}Обновление ячейки в существующем листе MS Excel}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}Подготовка: загрузка библиотек и зависимостей}{14}{section.3.4}
+\contentsline {chapter}{\numberline {4}Выполнение}{15}{chapter.4}
+\select@language {english}
+\select@language {english}
+\select@language {russian}
+\select@language {russian}

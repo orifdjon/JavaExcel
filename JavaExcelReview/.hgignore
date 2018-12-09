@@ -1,0 +1,20 @@
+syntax: glob
+*.picasa.ini
+*.tdo
+*.aux
+*.tmp
+*.bbl
+*.blg
+*.dvi
+*.log
+*.out
+*.toc
+*.synctex
+*abbrev_list.aux
+*.tps
+*.sublime-workspace
+*.sublime-project
+*.local.tcp
+
+syntax: regexp
+^thesis-template.pdf

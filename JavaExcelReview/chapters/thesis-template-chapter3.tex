@@ -1,0 +1,93 @@
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\chapter{Инструкция}
+
+\begin{itemize}
+	\item Для обращения к MS Excel версии до 2003 включительно года с Java используется класс HSSFWorkbook
+	\item Для обращения к MS Excel версии 2007 и позднее с Java используется класс XSSFWorkbook
+	\item  При операциях \textbf{Обновление} или \textbf{Запись} необходимо, чтобы MS Excel был закрыт.
+\end{itemize}
+
+\section{Чтение ячейки с MS Excel }
+
+Чтобы считать данные с \textbf{file.xlsx} необходимо исполнить следующие шаги:
+
+\begin{lstlisting}
+	//filePath - это путь до MS Excel
+	Workbook book = new XSSFWorkbook(new FileInputStream(filePath);
+	//считывается лист по индексу sheet_index. sheet_index начинается с 0
+	Sheet sheet = book.getSheetAt(sheet_index);
+	//считывается row по индексу row_index. row_index начинается с 0
+	Row row = sheet.getRow(row_index);
+	//считывается cell по индексу cell_index. cell_index начинается с 0
+	Cell cell = sheet.getCell(cell_index);
+\end{lstlisting}
+
+\section{Запись в ячейку MS Excel}
+
+\begin{lstlisting}
+	Workbook book = new XSSFWorkbook();
+	//name - имя листа
+	Sheet sheet = book.createSheet(name);
+	Row row = sheet.createRow(i);
+	Cell cell = row.createCell(j);
+	FileInputStream fileOut = new FileInputStream(filePath);
+	book.write(fileOut);
+	fileOut.close();
+\end{lstlisting}
+
+\section{Обновление ячейки в существующем листе MS Excel}
+
+\begin{lstlisting}
+	Workbook workbook = new XSSFWorkbook(new FileInputStream(filePath));
+	Sheet sheet = workbook.getSheetAt(i);
+	Row row = sheet.getRow(j);
+	Cell cell = row.getCell(k);
+	cell.setCellValue(value);
+\end{lstlisting}
+
+\section{Подготовка: загрузка библиотек и зависимостей}
+
+Чтобы использовать apache POI, вам нужно скачать jar файлы и добавить их через Intellij IDEA вручную, или вы можете предоставить это Maven.
+
+Во втором случае вам нужно просто добавить следующие две зависимости в pom.xml:
+
+\lstset{language=xml}
+
+\begin{lstlisting}
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.12</version>
+		</dependency>
+	</dependencies>
+\end{lstlisting}
+
+Самое удобное в Maven — что он загрузит не только указанные poi.jar и poi-ooxml.jar, но и все jar файлы, которые используются внутри, то есть xmlbeans-2.6.0.jar, 
+stax-api-1.0.1.jar, poi-ooxml-schemas-3.12.jar и commons-codec-1.9.jar

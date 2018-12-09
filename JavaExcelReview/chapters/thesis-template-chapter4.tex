@@ -1,0 +1,68 @@
+\chapter{Выполнение}
+
+\begin{enumerate}
+	\item Создать проект на java с помощью maven.
+	\item Следовать инструкции "Подготовка:..." описанная выше.
+	
+	\item Создать Excel файл в корневой папке проекта.
+	
+	\item Записать в A1 и A2 любые целые числа.
+	
+	\item Сохранить Excel файл.
+	
+	\item \textbf{Закрыть} Excel файл. (ОБЯЗЕТЬНОЕ УСЛОВИЕ, т.к. apache POI API может работать только с закрытым фалом)
+	
+	\item В папке src/main/java создать класс IOCell
+		\begin{enumerate}
+			\item Создать поле 
+			\begin{lstlisting}
+				private File filePath
+			\end{lstlisting}
+			\item Создать конструктор 
+			\begin{lstlisting}
+				IOCell(String filePath) { this.filePath = new File(filePath)}
+			\end{lstlisting}
+			\item Создать метод для чтения c Excel в Java
+			\begin{lstlisting}
+public void setCell(int row, int column, double val) {
+	Workbook workbook = null;
+	try (FileInputStream file = new FileInputStream(filePath)) {
+		workbook = new XSSFWorkbook(file);
+		Sheet sheet = workbook.getSheetAt(0);						sheet.getRow(row).getCell(column).setCellValue(val);
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+	try (OutputStream fileOut = new FileOutputStream(filePath)) {						workbook.write(fileOu;
+	} catch (FileNotFoundException e) {
+		System.out.println("file is not exist AAAA");
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+}
+			\end{lstlisting}
+			\item В папке src/main/java создать класс Main
+			\begin{enumerate}
+				\item Создать поле
+				\begin{lstlisting}
+private static final String filePath = "NAME_OF_EXCEL_FILE";
+				\end{lstlisting}
+				\item Создать метод
+\begin{lstlisting}
+public static void main(String[] args) {
+	IOCell ioCell = new IOCell(filePath);
+	Cell x = ioCell.getCell(0, 1, 0);
+	Cell y = ioCell.getCell(0,  1, 1);
+	System.out.println("first number: " + x.toString());				System.out.println("second number: " + y.toString());
+	//Write x * y
+	ioCell.setCell(4, 0, x.getNumericCellValue() *
+	y.getNumericCellValue());
+	//Write x + y
+	ioCell.setCell(4, 1, x.getNumericCellValue() +
+	y.getNumericCellValue());
+	System.out.println("Interactions is complete successfully");
+}
+\end{lstlisting}
+			\end{enumerate}
+			\item  Запускаем приложение и смотрим в консоль.
+		\end{enumerate}
+\end{enumerate}

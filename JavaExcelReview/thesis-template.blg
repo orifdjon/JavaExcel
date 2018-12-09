@@ -1,0 +1,19 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis-template.aux
+The style file: ugost2008.bst
+Database file #1: chapters/biblio.bib
+I was expecting a `,' or a `}'---line 14 of file chapters/biblio.bib
+ :  
+ :  url = {https://poi.apache.org/apidocs/index.html}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 20 of file chapters/biblio.bib
+ :  
+ :  url = {https://poi.apache.org/apidocs/index.html}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 61 of file chapters/biblio.bib
+ :  
+ :  language = {russian}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+(There were 3 error messages)

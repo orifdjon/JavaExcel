@@ -1,0 +1,56 @@
+\chapter{Компоненты Apache POI}
+\label{chapter1}
+
+%Большие отсупы --- это хорошо. Облегчает чтение длинных <<простыней>> текста
+\section{Описание компонетов}
+
+\begin{center}
+	\begin{tabular}{ll}
+	Horrible Spreadsheet Format & Компонент чтения и записи файлов MS-Excel, формат XLS \\
+	XML Spreadsheet Format Компонент & Чтения и записи файлов MS-Excel, формат XLSX \\
+	Horrible Property Set Format & Компонент получения наборов свойств файлов MS-Office \\
+	Horrible Word Processor Format & Компонент чтения и записи файлов MS-Word, формат DOC \\
+	XML Word Processor Format & Компонент чтения и записи файлов MS-Word, формат DOCX \\
+	Horrible Slide Layout Format & Компонент чтения и записи файлов PowerPoint, формат PPT \\
+	XML Slide Layout Format & Компонент чтения и записи файлов PowerPoint, формат PPTX \\
+	Horrible DiaGram Format & Компонент работы с файлами MS-Visio, формат VSD \\
+	XML DiaGram Format & Компонент работы с файлами MS-Visio, формат VSDX \\
+	\end{tabular}
+\end{center}
+
+
+
+\section{Список компонентов}
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Список компонентов\cite{OffDoc}}
+		\label{tab:listOfComponents}
+		\begin{tabular}{l|l}
+			\textbf{Наименование(артефакт)} & \textbf{Необходимые компоненты} \\
+			\hline
+			poi & commons-logging, commons-codec, commons-collections, log4j \\
+			poi-scratchpad & 	poi \\
+			poi-ooxml & poi, poi-ooxml-schemas \\ 
+			poi-ooxml-schemas & xmlbeans \\
+			poi-examples & 	poi, poi-scratchpad, poi-ooxml \\
+			ooxml-schemas & 	xmlbeans  \\
+		    ooxml-security & xmlbeans \\
+		\end{tabular}
+	\end{center}
+\end{table}
+
+В данной работе рассматриваются следующие классы, используемые для работы с файлами Excel из приложений Java.
+\begin{itemize}
+	\item рабочая книга - HSSFWorkbook, XSSFWorkbook
+	\item лист книги - HSSFSheet, XSSFSheet
+	\item строка - HSSFRow, XSSFRow
+	\item ячейка - HSSFCell, XSSFCell
+	\item стиль - стили ячеек HSSFCellStyle, XSSFCellStyle
+	\item шрифт - шрифт ячеек HSSFFont, XSSFFont
+\end{itemize}
+
+Поскольку описание всех классов и методов не разместить на одной странице, то можно ее прочитать в \href{https://poi.apache.org/apidocs/index.html}{офф док}.
+
+
+
